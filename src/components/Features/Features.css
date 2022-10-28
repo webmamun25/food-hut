@@ -1,0 +1,32 @@
+.feature-group{
+    margin: 70px;
+    padding: 20px;
+ 
+}
+.feature-card{
+   margin: 30px;
+   width: 323px;
+   height: 247.71px;
+   background: rgba(240, 240, 243, 0.623);
+box-shadow: 0 8px 32px 0 rgba(100, 214, 223, 0.37);
+backdrop-filter: blur( 12px );
+-webkit-backdrop-filter: blur( 12px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+}
+.card-top{
+    width: 323px;
+    height: 165.14px;
+    
+   
+}
+.title-text{
+    
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba(157, 161, 204, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
