@@ -2,7 +2,7 @@ import React from 'react';
 import  { useState,useEffect } from 'react';
 import { Card, CardGroup } from 'react-bootstrap';
 import './Features.css';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion/dist/framer-motion"
 
 import Pulse from 'react-reveal/Pulse';
 const Features = () => {
@@ -10,7 +10,7 @@ const Features = () => {
     useEffect(() => {
       fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
       .then(res=>res.json())
-      .then(data=>setfeatures(data?.categories?.slice(0,4)))
+      .then(data=>setfeatures(data.categories.slice(0,4)))
     }, [features]);
     return (
         
@@ -32,16 +32,16 @@ const Features = () => {
                         bottom: 50,
                         }}
                     >
-                                <Card.Img className='card-top' src={feature?.strCategoryThumb} />
+                                <Card.Img className='card-top' src={feature.strCategoryThumb} />
                             </motion.div>
                 
                 
                 
                     <Card.Body className='title-text'>
                     
-                    <Card.Title className='text-center' style={{color:"#FE724C"}}>{feature?.strCategory}</Card.Title>
+                    <Card.Title className='text-center' style={{color:"#FE724C"}}>{feature.strCategory}</Card.Title>
                     <Card.Text >
-                        {feature?.strCategoryDescription.slice(0,150).concat("...")}
+                        {feature.strCategoryDescription.slice(0,150).concat("...")}
                     </Card.Text>
                     </Card.Body>
         

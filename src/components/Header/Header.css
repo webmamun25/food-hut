@@ -1,44 +1,26 @@
 .menu{
-    background-color: #f7f7f7;
+    background-color: #f9f7ef;
     
 }
 .navbar-nav a{
  
     font-size: 24px;
-    color: #FE724C;
+    color: #e9496e;
     margin: 5px 10px;
     transition: all;
 }
 .navbar-nav a:hover{
- color: #e49474;
+ color: #d67a90;
  
 }
-@media screen and (min-width: 768px) {
-    .navbar-nav a:hover::after{
-        content: "";
-        position: fixed;
-        display: block;
-        width: 65px;
-        height: 2px;
-        
-        background-color: #f37e7e;
-    }
-}
+.img-user:hover{
+    
+    box-shadow: 1px 1px 2px 0px #e9496e,
+     1px 2px 4px 0px #e9496e,
+   2px 4px 8px 0px #e9496e,
+    2px 4px 16px 0px #e9496e;
 
-@media screen and (min-width: 480px) and (max-width: 760px) {
-    .navbar-nav a:hover::after{
-        content: "";
-        position: fixed;
-        left:220px;
-        display: block;
-        text-align: center;
-        width: 65px;
-        height: 2px;
-        
-        background-color: #f37e7e;
-    }
 }
-
 
 .img-logo{
     width: 100px;

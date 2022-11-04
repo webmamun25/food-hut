@@ -2,7 +2,7 @@ import React from 'react';
 
 import Banner from '../Banner/Banner';
 import Features from '../Features/Features';
-import { motion } from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion/dist/framer-motion";
 import './Home.css'
 
 const Home = () => {

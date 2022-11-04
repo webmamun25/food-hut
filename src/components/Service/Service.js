@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
-
+import './Service.css'
 const Service = () => {
     return (
         <div className='home'>
-            <h1>What would you like <br />
+            {/* <h1>What would you like <br />
                 to order </h1>
 
                 
@@ -23,8 +23,8 @@ const Service = () => {
         <Button type="submit">Search</Button>
           </div>
           
-     
-
+      */}
+      THis is service page
         </div>
     );
 };

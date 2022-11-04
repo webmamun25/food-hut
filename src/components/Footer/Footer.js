@@ -6,7 +6,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <>
-      <CDBFooter className="shadow">
+      <CDBFooter className="shadow total fixed-bottom">
       <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
         <CDBBox display="flex" justifyContent="between" className="flex-wrap">
           <CDBBox alignSelf="center">
@@ -31,7 +31,7 @@ const Footer = () => {
             </p>
             <CDBBox display="flex" flex="column" style={{ cursor: 'pointer' }}>
               <CDBFooterLink href="/">Service</CDBFooterLink>
-              <CDBFooterLink href="/">About Us</CDBFooterLink>
+              <CDBFooterLink href="/">Discount</CDBFooterLink>
               <CDBFooterLink href="/">Contact</CDBFooterLink>
               
             </CDBBox>
@@ -77,7 +77,7 @@ const Footer = () => {
     </CDBContainer>
           </CDBBox>
         </CDBBox>
-        <small className="text-center mt-5">&copy; FoodHut, 2022. All rights reserved.</small>
+        <small className="text-center mt-2">&copy; FoodHut, 2022. All rights reserved.</small>
       </CDBBox>
     </CDBFooter>
 </>

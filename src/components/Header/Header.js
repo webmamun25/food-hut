@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Header.css'
 import logo from '../../images/logo.png'
-const Header = () => {
+const Header = (props) => {
     return (
        
               <Navbar collapseOnSelect expand="lg" className='menu fixed-top' >
@@ -14,15 +14,31 @@ const Header = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features" >Home</Nav.Link>
-            <Nav.Link href="#pricing">About</Nav.Link>
+            <Nav.Link href="/home" >Home</Nav.Link>
+            <Nav.Link href="/discount" >Discount</Nav.Link>
+            
             
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">Service</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Contact
+            <Nav.Link href="/Service">Service</Nav.Link>
+            <Nav.Link>
+            {
+                  props.user.email ? <button onClick={props.handleSignout} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign Out</button>:<button onClick={props.handlegoogleSignin} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign In</button>
+                }
             </Nav.Link>
+            <Navbar.Brand >
+                {
+                  props.user.email? 
+                  <img src={props.user.photoURL} style={{width:"50px",height:"50px",borderRadius:"50px"}} className="img-user" alt="" />
+                  
+                  :
+                  <small>&nbsp;</small>
+                  
+                }
+                
+               
+            </Navbar.Brand>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
