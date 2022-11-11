@@ -1,5 +1,9 @@
 .total{
-   height: 250px;
+   position: relative;
+   bottom: 0px;
+   right: 0px;
+   left: 0px;
+   
 }
 .h5{
    color: #F37E7E;

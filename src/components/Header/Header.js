@@ -2,7 +2,9 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Header.css'
 import logo from '../../images/logo.png'
+import { NavLink } from "react-router-dom";
 const Header = (props) => {
+  
     return (
        
               <Navbar collapseOnSelect expand="lg" className='menu fixed-top' >
@@ -14,18 +16,18 @@ const Header = (props) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home" >Home</Nav.Link>
-            <Nav.Link href="/discount" >Discount</Nav.Link>
+            <NavLink className="header-link" to="/home" >Home</NavLink>
+            <NavLink className="header-link" to="/discount">Discount</NavLink>
             
             
           </Nav>
           <Nav>
-            <Nav.Link href="/Service">Service</Nav.Link>
-            <Nav.Link>
+            <NavLink className="header-link" to="/Service">Service</NavLink>
+            <NavLink >
             {
                   props.user.email ? <button onClick={props.handleSignout} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign Out</button>:<button onClick={props.handlegoogleSignin} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign In</button>
                 }
-            </Nav.Link>
+            </NavLink>
             <Navbar.Brand >
                 {
                   props.user.email? 

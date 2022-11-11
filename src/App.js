@@ -1,44 +1,42 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Routes, Route, Link } from "react-router-dom";
 import Home from './components/Home/Home'
 
-import Notfound from './components/Notfound/Notfound'
+
 import Header from './components/Header/Header';
 import Service from './components/Service/Service';
 import Footer from './components/Footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { Outlet } from "react-router-dom"
 import app from './firebase.init';
 
-import { getAuth,GoogleAuthProvider, signInWithPopup,signOut } from "firebase/auth";
+import { getAuth,GoogleAuthProvider, signInWithPopup,signOut,onAuthStateChanged } from "firebase/auth";
 
 
 import { useState } from 'react';
 import Discount from './components/Discount/Discount';
+import ServiceDetails from './components/ServiceDetail/ServiceDetails';
+import DiscountDetails from './components/DiscountDetails/DiscountDetails';
+import RatingUs from './components/RatingUs/RatingUs';
 const auth = getAuth(app);
 function App() {
 
-  const[user,setUser]=useState([])
+  const[user,setUser]=useState({})
+  
     const provider = new GoogleAuthProvider();
     const handlegoogleSignin=()=>{
         signInWithPopup(auth, provider)
         .then(result=>{
             const user=result.user
             setUser(user)
-            console.log(user)
+            
         })
         .catch((error) => {
-            // Handle Errors here.
-            // const errorCode = error.code;
-            // const errorMessage = error.message;
-            // // The email of the user's account used.
-            // const email = error.customData.email;
-            // // The AuthCredential type that was used.
-            // const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
+            
+          
             console.log(error)
           })
        
@@ -53,6 +51,14 @@ function App() {
         setUser({});
       });
     }
+
+    useEffect(()=>{
+      onAuthStateChanged(auth,user=>{
+        setUser(user);
+      })
+    },[])
+
+    
   return (
     <div>
     <Header handlegoogleSignin={handlegoogleSignin} user={user} handleSignout={handleSignout}></Header>
@@ -60,11 +66,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/discount" element={<Discount/>} />
+        <Route path="/discount"  element={<Discount/>} />
+        <Route path="/discount/:discountid" element={<DiscountDetails/>} />
+        <Route path="/rating" element={<RatingUs  user={user} ></RatingUs>} />
         
-        <Route path="/Service" element={<Service/>} />
+        <Route path="/Service"  element={<Service  />} />
+        <Route path="/Service/:serviceid"  element={<ServiceDetails userdb={user}  />} />
+
     
-        <Route path="*" element={<Notfound />} />
+        
 
       </Routes>
       <Footer></Footer>

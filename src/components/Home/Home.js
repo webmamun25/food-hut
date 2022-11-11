@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import Features from '../Features/Features';
 import {AnimatePresence, motion} from "framer-motion/dist/framer-motion";
 import './Home.css'
+import RatingUs from '../RatingUs/RatingUs';
 
 const Home = () => {
   
@@ -15,6 +16,7 @@ const Home = () => {
       <div className='banner'>
         
       </div>
+      <RatingUs></RatingUs>
       
          
           
