@@ -24,10 +24,11 @@ import RatingUs from './components/RatingUs/RatingUs';
 const auth = getAuth(app);
 function App() {
 
-  const[user,setUser]=useState({})
+  const[user,setUser]=useState([])
   
     const provider = new GoogleAuthProvider();
-    const handlegoogleSignin=()=>{
+    const handlegoogleSignin=(e)=>{
+      e.preventDefault()
         signInWithPopup(auth, provider)
         .then(result=>{
             const user=result.user
@@ -42,7 +43,8 @@ function App() {
        
     }
 
-    const handleSignout=()=>{
+    const handleSignout=(e)=>{
+      e.preventDefault()
       signOut(auth).then(() => {
         // Sign-out successful.
         setUser({});
@@ -52,7 +54,8 @@ function App() {
       });
     }
 
-    useEffect(()=>{
+    useEffect((e)=>{
+      e.preventDefault()
       onAuthStateChanged(auth,user=>{
         setUser(user);
       })
