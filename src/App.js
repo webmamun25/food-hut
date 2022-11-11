@@ -27,12 +27,14 @@ function App() {
   const[user,setUser]=useState({})
   
     const provider = new GoogleAuthProvider();
-    const handlegoogleSignin=(e)=>{
-      e.preventDefault()
-        signInWithPopup(auth, provider)
+     const handlegoogleSignin=async()=>{
+      
+        await signInWithPopup(auth, provider)
         .then(result=>{
-            const user=result.user
-            setUser(user)
+            const user_name=result.user
+           
+            setUser(user_name)
+           
             
         })
         .catch((error) => {
@@ -43,9 +45,9 @@ function App() {
        
     }
 
-    const handleSignout=(e)=>{
-      e.preventDefault()
-      signOut(auth).then(() => {
+    const handleSignout=async()=>{
+    
+      await signOut(auth).then(() => {
         // Sign-out successful.
         setUser({});
       }).catch((error) => {
