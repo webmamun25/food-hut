@@ -24,7 +24,7 @@ import RatingUs from './components/RatingUs/RatingUs';
 const auth = getAuth(app);
 function App() {
 
-  const[user,setUser]=useState([])
+  const[user,setUser]=useState({})
   
     const provider = new GoogleAuthProvider();
     const handlegoogleSignin=(e)=>{
@@ -54,8 +54,8 @@ function App() {
       });
     }
 
-    useEffect((e)=>{
-      e.preventDefault()
+    useEffect(()=>{
+     
       onAuthStateChanged(auth,user=>{
         setUser(user);
       })

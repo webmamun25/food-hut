@@ -25,13 +25,13 @@ const Header = (props) => {
             <NavLink className="header-link" to="/Service">Service</NavLink>
             <NavLink >
             {
-                  props?.user.email ? <button onClick={props?.handleSignout} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign Out</button>:<button onClick={props?.handlegoogleSignin} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign In</button>
+                  props.user.email ? <button onClick={props.handleSignout} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign Out</button>:<button onClick={props.handlegoogleSignin} style={{borderRadius:"25px",backgroundColor:"#e9496e",border:"2px solid white",width:'120px',color:"white"}}>Sign In</button>
                 }
             </NavLink>
             <Navbar.Brand >
                 {
-                  props?.user.email? 
-                  <img src={props?.user.photoURL} style={{width:"50px",height:"50px",borderRadius:"50px"}} className="img-user" alt="" />
+                  props.user.email? 
+                  <img src={props.user.photoURL} style={{width:"50px",height:"50px",borderRadius:"50px"}} className="img-user" alt="" />
                   
                   :
                   <small>&nbsp;</small>
