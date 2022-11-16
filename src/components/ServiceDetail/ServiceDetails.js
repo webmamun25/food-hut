@@ -17,7 +17,7 @@ const ServiceDetails = (props) => {
     const [value,setValue]=useState(2)
     
     useEffect(() => {
-        const url=`https://radiant-thicket-42845.herokuapp.com/service/${serviceid}`
+        const url=`http://localhost:5000/service/${serviceid}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setService(data))
@@ -57,7 +57,7 @@ const ServiceDetails = (props) => {
         e.preventDefault()
           const given={...service,value}
               
-            fetch("https://radiant-thicket-42845.herokuapp.com/ratingus",{
+            fetch("http://localhost:5000/ratingus",{
               method:"POST",
               headers:{
                 "content-type":"application/json"

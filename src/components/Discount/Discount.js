@@ -11,7 +11,7 @@ const Discount = () => {
     const[discounts,setdiscounts]=useState([]);
   
   useEffect(()=>{
-    fetch('https://radiant-thicket-42845.herokuapp.com/discount')
+    fetch('http://localhost:5000/discount')
     .then(res=>res.json())
     .then(data=>setdiscounts(data))
   },[])

@@ -11,7 +11,7 @@ const RatingUs = () => {
   const[ratings,setRating]=useState([]);
   
   useEffect(()=>{
-    fetch('https://radiant-thicket-42845.herokuapp.com/found')
+    fetch('http://localhost:5000/found')
     .then(res=>res.json())
     .then(data=>{
       setRating(data)
