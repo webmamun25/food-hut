@@ -9,7 +9,7 @@ import { Rating } from '@mui/material';
 
 
 
-const DiscountDetails = () => {
+const DiscountDetails = (props) => {
     const {discountid}=useParams();
     const [count, setCount] = useState(1);
     const[service,setService]=useState({});
@@ -111,6 +111,8 @@ const DiscountDetails = () => {
     </h1>
      
       <ListGroup>
+      <ListGroup.Item>User Name:{props.userdb.displayName}</ListGroup.Item>
+      <ListGroup.Item>User Email:{props.userdb.email}</ListGroup.Item>
         <ListGroup.Item>Name:{service.strCategory}</ListGroup.Item>
         <ListGroup.Item >Quantity
         <div className="main-content">

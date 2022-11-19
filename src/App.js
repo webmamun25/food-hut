@@ -72,7 +72,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/discount"  element={<Discount/>} />
-        <Route path="/discount/:discountid" element={<DiscountDetails/>} />
+        <Route path="/discount/:discountid" element={<DiscountDetails userdb={user}/>} />
         <Route path="/rating" element={<RatingUs  user={user} ></RatingUs>} />
         
         <Route path="/Service"  element={<Service  />} />
